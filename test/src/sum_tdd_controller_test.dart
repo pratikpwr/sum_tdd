@@ -19,5 +19,16 @@ void main() {
       // assert
       expect(result, equals(0));
     });
+
+    test("should return 1 when string is 1", () {
+      // arrange
+      const value = "1";
+
+      // act
+      final result = controller.add(value);
+
+      // assert
+      expect(result, equals(1));
+    });
   });
 }
