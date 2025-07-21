@@ -30,5 +30,16 @@ void main() {
       // assert
       expect(result, equals(1));
     });
+
+    test("should add two numbers when passed as comma separated values", () {
+      // arrange
+      const value = "1,2";
+
+      // act
+      final result = controller.add(value);
+
+      // assert
+      expect(result, equals(3));
+    });
   });
 }
