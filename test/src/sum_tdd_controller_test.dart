@@ -41,5 +41,19 @@ void main() {
       // assert
       expect(result, equals(7));
     });
+
+    test(
+      "should add any amount of numbers when passed as comma separated values",
+      () {
+        // arrange
+        const value = "5,2,4,5,3";
+
+        // act
+        final result = controller.add(value);
+
+        // assert
+        expect(result, equals(19));
+      },
+    );
   });
 }
