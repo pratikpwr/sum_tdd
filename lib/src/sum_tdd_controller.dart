@@ -1,5 +1,9 @@
 class SumTddController {
   int sumNumbersInString(String value) {
-    return -1;
+    final result = 0;
+    if (value.isEmpty) {
+      return 0;
+    }
+    return result;
   }
 }
