@@ -33,13 +33,13 @@ void main() {
 
     test("should add two numbers when passed as comma separated values", () {
       // arrange
-      const value = "1,2";
+      const value = "5,2";
 
       // act
       final result = controller.add(value);
 
       // assert
-      expect(result, equals(3));
+      expect(result, equals(7));
     });
   });
 }
