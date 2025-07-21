@@ -6,7 +6,7 @@ class SumTddController {
     if (value.length == 1) {
       return int.parse(value);
     }
-    
+
     int result = 0;
 
     String numbersString = value;
@@ -21,6 +21,10 @@ class SumTddController {
 
     if (value.contains("\n")) {
       numbersString = numbersString.replaceAll("\n", ",");
+    }
+
+    if (value.contains("\\n")) {
+      numbersString = numbersString.replaceAll("\\n", ",");
     }
 
     numbers = numbersString.split(delimiter);

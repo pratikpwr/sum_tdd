@@ -71,6 +71,20 @@ void main() {
     expect(result, equals(6));
   });
 
+  test(
+    "3b. should handle literal \\n characters between numbers when user input is from the text field",
+    () {
+      // arrange
+      const value = "2\\n3,4";
+
+      // act
+      final result = controller.add(value);
+
+      // assert
+      expect(result, equals(9));
+    },
+  );
+
   test("4. should support different delimiters", () {
     // arrange
     const value = "//;\n1;2";
