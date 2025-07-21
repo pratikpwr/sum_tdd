@@ -27,6 +27,10 @@ class SumTddController {
         if (num == null) {
           continue;
         }
+        if (num < 0) {
+          print("negative numbers not allowed: $num");
+          throw Exception("negative numbers not allowed: $num");
+        }
         result += num;
       }
     }

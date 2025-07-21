@@ -81,4 +81,17 @@ void main() {
     // assert
     expect(result, equals(3));
   });
+
+  group("5. Negative numbers", () {
+    test("should throw an exception when a negative number is passed", () {
+      // arrange
+      const value = "-1,2";
+
+      // act
+      action() => controller.add(value);
+
+      // assert
+      expect(action, throwsA(isA<Exception>())); // throwsA(isA<Exception>())
+    });
+  });
 }
