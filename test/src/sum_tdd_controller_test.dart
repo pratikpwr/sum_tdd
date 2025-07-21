@@ -131,4 +131,15 @@ void main() {
       },
     );
   });
+
+  test("6. should ignore numbers greater than 1000", () {
+    // arrange
+    const value = "1001,2";
+
+    // act
+    final result = controller.add(value);
+
+    // assert
+    expect(result, equals(2));
+  });
 }
