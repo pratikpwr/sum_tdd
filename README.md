@@ -1,16 +1,30 @@
-# sum_tdd
+# Sum TDD
 
-A new Flutter project.
+A Flutter project demonstrating Test-Driven Development (TDD) principles through the implementation of the String Calculator kata.
 
-## Getting Started
+## About This Project
 
-This project is a starting point for a Flutter application.
+This project is designed to showcase TDD methodology by implementing the famous **String Calculator** kata by Roy Osherove. The goal is to demonstrate how TDD guides development through incremental, test-first coding practices.
 
-A few resources to get you started if this is your first Flutter project:
+## What is TDD?
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+Test-Driven Development (TDD) is a software development methodology where:
+1. Write a failing test first
+2. Write the minimum code to make the test pass
+3. Refactor the code while keeping tests green
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+## String Calculator Kata
+
+This implementation follows the String Calculator kata requirements:
+- Create a simple string calculator with an `Add(string numbers)` method
+- Handle empty strings, single numbers, and comma-separated values
+- Support different delimiters and various edge cases
+- Practice incremental development through TDD
+
+## Test Results
+
+![Test Results](https://github.com/pratikpwr/sum_tdd/blob/main/test_results.png)
+
+## Reference
+
+Based on the TDD Kata from: [https://osherove.com/tdd-kata-1/](https://osherove.com/tdd-kata-1/)
