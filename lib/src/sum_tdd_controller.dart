@@ -1,1 +1,5 @@
-class SumTddController {}
+class SumTddController {
+  int sumNumbersInString(String value) {
+    return -1;
+  }
+}

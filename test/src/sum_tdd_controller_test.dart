@@ -8,5 +8,16 @@ void main() {
     controller = SumTddController();
   });
 
-  group("Simple Controller", () {});
+  group("Simple Controller", () {
+    test("should return 0 when string is empty", () {
+      // arrange
+      const value = "";
+
+      // act
+      final result = controller.sumNumbersInString(value);
+
+      // assert
+      expect(result, equals(0));
+    });
+  });
 }
