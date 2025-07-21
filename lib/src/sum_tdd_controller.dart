@@ -6,9 +6,21 @@ class SumTddController {
     } else if (value.length == 1) {
       result = int.parse(value);
     } else {
-      final numbers = value.split(",");
+      String numbersString = value;
+      List<String> numbers = [];
+
+      if (value.contains("\n")) {
+        numbersString = value.replaceAll("\n", ",");
+      }
+
+      numbers = numbersString.split(",");
+
       for (var number in numbers) {
-        result += int.parse(number);
+        final num = int.tryParse(number);
+        if (num == null) {
+          continue;
+        }
+        result += num;
       }
     }
 
