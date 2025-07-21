@@ -9,11 +9,18 @@ class SumTddController {
       String numbersString = value;
       List<String> numbers = [];
 
+      String delimiter = ",";
+
+      if (value.startsWith("//")) {
+        delimiter = value.substring(2, 3);
+        numbersString = value.substring(4);
+      }
+
       if (value.contains("\n")) {
         numbersString = numbersString.replaceAll("\n", ",");
       }
 
-      numbers = numbersString.split(",");
+      numbers = numbersString.split(delimiter);
 
       for (var number in numbers) {
         final num = int.tryParse(number);

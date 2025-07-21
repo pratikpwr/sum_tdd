@@ -62,12 +62,23 @@ void main() {
 
   test("3. should handle new lines between numbers", () {
     // arrange
-    const value = "3,2\n4";
+    const value = "1\n2,3";
 
     // act
     final result = controller.add(value);
 
     // assert
-    expect(result, equals(9));
+    expect(result, equals(6));
+  });
+
+  test("4. should support different delimiters", () {
+    // arrange
+    const value = "//;\n1;2";
+
+    // act
+    final result = controller.add(value);
+
+    // assert
+    expect(result, equals(3));
   });
 }
