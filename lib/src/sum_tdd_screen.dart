@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:sum_tdd/src/sum_tdd_controller.dart';
 
 class SumTDDScreen extends StatefulWidget {
   const SumTDDScreen({super.key});
@@ -8,9 +9,10 @@ class SumTDDScreen extends StatefulWidget {
 }
 
 class _SumKataScreenState extends State<SumTDDScreen> {
-  final TextEditingController _controller = TextEditingController();
+  final _controller = TextEditingController();
 
   int result = 0;
+  final _sumTddController = SumTddController();
 
   @override
   Widget build(BuildContext context) {
@@ -30,7 +32,14 @@ class _SumKataScreenState extends State<SumTDDScreen> {
               keyboardType: TextInputType.number,
             ),
             const SizedBox(height: 32),
-            ElevatedButton(onPressed: () {}, child: const Text('Sum')),
+            ElevatedButton(
+              onPressed: () {
+                setState(() {
+                  result = _sumTddController.add(_controller.text);
+                });
+              },
+              child: const Text('Sum'),
+            ),
             const SizedBox(height: 16),
             Text(
               'Result: $result',

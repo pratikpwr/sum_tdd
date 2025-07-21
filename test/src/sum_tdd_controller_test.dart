@@ -62,12 +62,12 @@ void main() {
 
   test("3. should handle new lines between numbers", () {
     // arrange
-    const value = "5\n2,3";
+    const value = "3,2\n4";
 
     // act
     final result = controller.add(value);
 
     // assert
-    expect(result, equals(10));
+    expect(result, equals(9));
   });
 }

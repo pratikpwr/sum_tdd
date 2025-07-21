@@ -10,7 +10,7 @@ class SumTddController {
       List<String> numbers = [];
 
       if (value.contains("\n")) {
-        numbersString = value.replaceAll("\n", ",");
+        numbersString = numbersString.replaceAll("\n", ",");
       }
 
       numbers = numbersString.split(",");
