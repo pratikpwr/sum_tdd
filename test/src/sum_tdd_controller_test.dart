@@ -14,7 +14,7 @@ void main() {
       const value = "";
 
       // act
-      final result = controller.sumNumbersInString(value);
+      final result = controller.add(value);
 
       // assert
       expect(result, equals(0));
