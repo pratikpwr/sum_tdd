@@ -22,16 +22,26 @@ class SumTddController {
 
       numbers = numbersString.split(delimiter);
 
+      final negativeNumbers = <int>[];
+
       for (var number in numbers) {
         final num = int.tryParse(number);
         if (num == null) {
           continue;
         }
+
         if (num < 0) {
-          print("negative numbers not allowed: $num");
-          throw Exception("negative numbers not allowed: $num");
+          negativeNumbers.add(num);
+        } else {
+          result += num;
         }
-        result += num;
+      }
+
+      if (negativeNumbers.isNotEmpty) {
+        print("negative numbers not allowed: ${negativeNumbers.join(",")}");
+        throw Exception(
+          "negative numbers not allowed: ${negativeNumbers.join(",")}",
+        );
       }
     }
 

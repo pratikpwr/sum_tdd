@@ -83,15 +83,52 @@ void main() {
   });
 
   group("5. Negative numbers", () {
-    test("should throw an exception when a negative number is passed", () {
-      // arrange
-      const value = "-1,2";
+    test(
+      "5. a) should throw an exception when a negative number is passed",
+      () {
+        // arrange
+        const value = "-1,2";
 
-      // act
-      action() => controller.add(value);
+        // act
+        action() => controller.add(value);
 
-      // assert
-      expect(action, throwsA(isA<Exception>())); // throwsA(isA<Exception>())
-    });
+        // assert
+        expect(action, throwsA(isA<Exception>()));
+      },
+    );
+
+    test(
+      "5. b) should throw an exception when a negative number is passed, should match the error message",
+      () {
+        // arrange
+        const value = "-1,2";
+        const errorMessage = "negative numbers not allowed: -1";
+
+        try {
+          // act
+          controller.add(value);
+        } catch (e) {
+          // assert
+          expect(e.toString(), contains(errorMessage));
+        }
+      },
+    );
+
+    test(
+      "5. c) should throw an exception when a negative number is passed, if there are multiple negative numbers in the string",
+      () {
+        // arrange
+        const value = "-1,-2,3";
+        const errorMessage = "negative numbers not allowed: -1,-2";
+
+        try {
+          // act
+          controller.add(value);
+        } catch (e) {
+          // assert
+          expect(e.toString(), contains(errorMessage));
+        }
+      },
+    );
   });
 }
