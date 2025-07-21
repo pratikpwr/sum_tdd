@@ -1,9 +1,12 @@
 class SumTddController {
   int add(String value) {
-    final result = 0;
+    int result = 0;
     if (value.isEmpty) {
-      return 0;
+      result = 0;
+    } else if (value.length == 1) {
+      result = int.parse(value);
     }
+
     return result;
   }
 }
